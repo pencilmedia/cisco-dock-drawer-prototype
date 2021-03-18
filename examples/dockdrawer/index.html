@@ -1,0 +1,140 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+     <meta type charset="utf-8">
+     <meta name="description" content="">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+     <title>dock drawer</title>
+     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+     <link rel="stylesheet" href="../../styles/main.css">
+     <script src="../../scripts/vendor/modernizr.js"></script>
+</head>
+
+<body class="cui">
+     <!--[if IE]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+     <div class="content-fluid">
+          <nav class="nav-container">
+               <aside class="anim-sidebar">
+                    <div class="anim-list">List</div>
+               </aside>
+               <aside class="anim-dockdrawer"><button class="btn btn-anim-dock"><span class="btn-anim-dock--count"><strong
+                                   class="counter">3</strong></span> <span class="btn-anim-dock--label"><label>Open
+                                   Items</label><i class="icon-chevron-up icon-small" data-id="icon-toggle"></i></span></button>
+                    <div class="anim-drawer">
+                         <div class="anim-dockdrawer--actions"><a href="#/" data-id="confirm-clear-l2">Clear All</a></div>
+                         <ul class="anim-drawer--list">
+                              <li class="empty-list-message hide-item">No items stored</li>
+                              <li><a href="#/" class="anim-drawer--link" data-id="open-l2" data-modal="l2-dialog-1"><strong
+                                             class="anim-drawer--profile">TN</strong> <label>L2 - Full Screen Dialog</label>
+                                   </a><button class="btn btn--icon btn--white-ghost anim-drawer--remove"><span class="icon-close"></span></button></li>
+                              <li><a href="#/" class="anim-drawer--link"><strong class="anim-drawer--profile">EG</strong><label>Endpoint
+                                             Group</label></a> <button class="btn btn--icon btn--white-ghost anim-drawer--remove"
+                                        data-id="remove-drawer-item"><span class="icon-close"></span></button></li>
+                              <li><a href="#/" class="anim-drawer--link" data-id="open-l2" data-modal="l2-dialog-2"><strong
+                                             class="anim-drawer--profile">TN</strong><label>Tenant</label></a> <button
+                                        class="btn btn--icon btn--white-ghost anim-drawer--remove"><span class="icon-close"></span></button></li>
+                         </ul>
+                    </div>
+               </aside>
+          </nav>
+          <main>
+               <header class="header header--compressed">
+                    <div class="header-bar container"><a href="javascript:;" class="btn btn--small btn--icon toggle-menu"
+                              data-id="expand-sidebar"><span class="icon-list-menu"></span></a>
+                         <div class="header-bar__main">
+                              <div class="header-heading">
+                                   <h1 class="page-title">Dock Drawer Animation Example</h1>
+                              </div>
+                         </div>
+                         <div class="header-toolbar"><a href="javascript:;" class="btn btn--small btn--icon"><span
+                                        class="icon-search"></span> </a><a href="javascript:;" class="btn btn--small btn--icon"><span
+                                        class="icon-tools"></span> </a><a href="javascript:;" class="btn btn--icon btn--small"><span
+                                        class="icon-help"></span></a></div>
+                    </div>
+               </header>
+               <article class="ux-content">
+                    <h2>UX Animation Reference Prototype</h2>
+                    <p>Below is a list of animations perfomed in the dock drawer.</p>
+                    <dl><dt>Sidebar Nav and Dock Drawer Animations</dt>
+                         <dd>Sidebar Nav pinning or hovering is functional. Use hamburger menu to pin sidebar.</dd>
+                         <dd>Dock Button - Click to open dock and view the drawer pinning.</dd><dt>Delete Item &amp;
+                              Clear Items Animations</dt>
+                         <dd>Drawer - Delete the "Endpoint Group" item to view remove animation and update the count.</dd>
+                         <dd>Clear All - Presents confirmation to clear all and update the count.</dd><dt>Opening a
+                              Drawer Item Animations</dt>
+                         <dd>Drawer - Open "L2 - Full Screen Dialog" to view opening animation.</dd>
+                         <dd>L2 Dialog - Minimize and/or Close to view minimizing/closing animations.</dd>
+                         <dd>L2 Dialog - When opened, reopen the dialog to see the drawer open just below the header
+                              bar.</dd>
+                    </dl>
+                    <p>&nbsp;</p>
+                    <h3>To Do</h3>
+                    <ul>
+                         <li>Closing L2 Dialog should also delete the list item from the drawer...</li>
+                         <li>Add quicktime video of flow examples and include in the dist zip file</li>
+                    </ul>
+               </article>
+          </main>
+     </div>
+     <div class="modal modal--small" id="modal-confirm-close">
+          <div class="modal__dialog">
+               <div class="modal__content"><a class="modal__close" data-toggle="modal" data-target="#modal-confirm-close"><span
+                              class="icon-close"></span></a>
+                    <div class="modal__header">
+                         <h1 class="modal__title">Clear All Items</h1>
+                    </div>
+                    <div class="modal__body">
+                         <p class="subtitle">Are you sure you would like to remove all items from the dock drawer?</p>
+                    </div>
+                    <div class="modal__footer"><button class="btn btn-primary" data-toggle="modal" data-target="#modal-confirm-close"
+                              id="confirm-clear">OK</button> <button class="btn" data-toggle="modal" data-target="#modal-confirm-close">Cancel</button></div>
+               </div>
+          </div>
+     </div>
+     <div class="l2-dialog anim-l2" data-id="l2-dialog" id="l2-dialog-1">
+          <nav>
+               <h4 class="l2-header--title">L2 - Full Screen Dialog</h4>
+               <div class="l2-header--actions"><button class="btn btn--icon btn--white-ghost" data-id="minimize-l2"><span
+                              class="icon-remove"></span></button> <button class="btn btn--icon btn--white-ghost"
+                         data-id="close-l2" data-modal="l2-dialog-1"><span class="icon-close"></span></button></div>
+          </nav>
+          <section class="l2-dialog--content">
+               <h2>Dock Drawer Flow and Animation Reference</h2>
+               <p>Follow this flow to view the key animation elements.</p>
+               <dl><dt>L2 Animations</dt>
+                    <dd>L2 Dialog - Minimize and/or Close to view minimizing/closing animations.</dd>
+                    <dd>L2 Dialog - When opened, reopen the dialog to see the drawer open just below the header bar.</dd>
+               </dl>
+          </section>
+     </div>
+     <div class="l2-dialog anim-l2" data-id="l2-dialog" id="l2-dialog-2">
+          <nav>
+               <h4 class="l2-header--title">Tenant</h4>
+               <div class="l2-header--actions"><button class="btn btn--icon btn--white-ghost" data-id="minimize-l2"><span
+                              class="icon-remove"></span></button> <button class="btn btn--icon btn--white-ghost"
+                         data-id="close-l2" data-modal="l2-dialog-2"><span class="icon-close"></span></button></div>
+          </nav>
+          <section class="l2-dialog--content">
+               <h2>Page Title</h2>
+               <p>Est tempor ad velit Lorem dolor. Eu consectetur eiusmod duis aliqua sunt tempor nostrud. Anim est
+                    eiusmod in qui. Officia non officia sint irure et sint tempor ea dolore cillum sit velit commodo.
+                    Anim sunt aliquip non reprehenderit ea ea eu qui deserunt enim nisi quis irure ea. Excepteur ex
+                    commodo dolor reprehenderit quis aute in commodo incididunt commodo. Anim qui amet consequat
+                    adipisicing exercitation id ex ipsum proident dolor veniam laboris tempor nisi.</p>
+          </section>
+     </div>
+     <script src="../../scripts/vendor.js"></script>
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+          crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+          crossorigin="anonymous"></script>
+     <script src="../../scripts/main.js"></script>
+</body>
+
+</html>
